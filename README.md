@@ -132,3 +132,22 @@ return this.color+" "+this.weight;
 // car.model
 // Display some data from the object:
 document.getElementById("demo").innerHTML = car.details()+" "+ car.type+" "+car.model+" "+car["weight"]+" "+car["color"];
+
+let keyword
+==> Varables declared with the let keyword can have Block Scope. 
+===> let keyword means local variable we can use both var and let inside the function.
+var x = 10;
+// Here x is 10
+{ 
+    let x = 2;
+    // Here x is 2
+}
+
+==> debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
+
+
+
+
+
+
+
