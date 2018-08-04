@@ -145,6 +145,128 @@ var x = 10;
 
 ==> debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function.
 
+==> .then() function has been included to pure javascript.
+==> The then() method returns a Promise. It takes two arguments: callback functions for the success and failure cases of the Promise.
+==> then is a method used to solve Asynchronous callbacks
+
+==> We need to write "document.write()" javascript file starting line.
+document.write("someone learn");
+==> Need to show one alert dialog with ok button use ==> "alert("")"
+
+==> Function call and taken value from edit text when button click
+<script type="text/javascript">
+function greetUser(){
+    var userInput = document.getElementById('userName').value;
+    document.getElementById('greeting').innerHTML = 'Hello, ' + userInput;
+}
+
+function getCouseName() {
+  var welcomeText = document.getElementById("courseName").value;
+  document.getElementById("p_welcome_text").innerHTML = welcomeText;
+}
+</script>
+==> HTML code for the creation of edit text and button functionality.
+<p id='greeting'>Welcome</p>
+<p id="p_welcome_text" > Welcome Java Script </p>
+<input type="text" id="courseName" value="Enter course name" />
+<input type='text' id='userName' value='Enter Your Name' />
+<input type='button' onclick='greetUser();' value='Say Hello'/>
+<input type="button" onclick="getCouseName()" value="Say course name" />
+
+==> Try to place the comments for every line or function to make it as clear.
+==> 1. In the above script we have taken two textviews and two edit texts and two buttons.
+==> 2. when we click the button we need to take the edit text value and assign to the textview (or) p tag --> paragraph tag
+
+==> Try to compare the Javascript with android to get more clarity on it.
+==> In android we can take one button in XML and with onClick() attribute and implenting the functionality in the .java file and taking the edit text values and all form the unique ids after that user entered value can assign to the textview.
+
+==> Creating super class Animal and extracting into the sub class. Super class will be called by call.
+<script type="text/javascript">
+function useStringObject() {
+    var strObject = new String("Narendra");
+    // document.write("Employee name is > " + strObject + " Name length is > "+strObject.length
+    // +" Upper case letter are > "+strObject.toUpperCase());
+    alert("Employee name is > " + strObject + " Name length is > "+strObject.length
+    +" Upper case letter are > "+strObject.toUpperCase());
+}
+
+function useDateObject() {
+  var dateObject = new Date();
+  alert(dateObject.getDate()+" "+dateObject.getMonth()+" "+dateObject.getFullYear());
+}
+
+// When click on "Create Animal Object" button this createAnimalObject method called.
+function createAnimalObject() {
+	var animalObject = new Animal("Different Sound"); // creating Animal object
+	animalObject.talk("wow !", "Some One");			  // calling talk method with animal object
+	animalObject.walk();							  // calling walk method with animal object
+}
+
+// creating the Animal object constructor with one parameter
+// In java or other classes we can create class and its methods but in javascript it is different.
+// When new Animal("") ==> is called --> The animal object created with parameter.
+function Animal( animalName ) {
+	this.name = animalName; 			// taking the constructor parameter to local variable
+	this.talk = sayAnimalInformation;   // Here <sayAnimalInformation> means function assigning to 
+										// the this.talk method. Here this is object talk is method. 				 
+}
+
+// Animal object standard alone function declaration.
+function sayAnimalInformation(animalSound, animalName) {
+	alert(animalSound+" "+"Animal name is > "+animalName);
+}
+
+// Animal object prototype function declaratioin.
+Animal.prototype.walk = function() {
+	alert("walk can fast");
+}
+
+// =========== sub class creating and accessing the super class methods and properties. ==========
+
+function createDogObject() {
+	var dogObject = new Dog("Fidda");   // creating Dog object with name parameter inside constructor.
+	dogObject.talk("Woww! ", dogObject.name);          // calling talk method with dog object. 
+	dogObject.eat();
+}
+
+function Dog(dogName) {
+	Animal.call(this, dogName); // Calling super class object by using the call method.
+	this.eat = dogEatFood;      // Calling the dogEatFood() method.
+}
+
+function dogEatFood() {
+	alert("Dog eat bisckets >> ");
+}
+
+
+function createCatObject() {
+	var catObject = new Cat("Pinki");
+	catObject.talkSound("Meyavuu > ", catObject.name, "Brown");
+	catObject.catEatFood();
+}
+
+function Cat(catName) {
+	this.name = catName;
+	this.talkSound = catSoundFunction;
+}
+
+function catSoundFunction(catSound, catName, catColor) {
+	var result = catSound;
+	alert(result +" "+ "Cat name is > "+ catName + " Cat color is > "+catColor);
+}
+
+Cat.prototype.catEatFood = function() {
+	alert("cat eats milk rice > ");
+}
+</script>
+
+<input type='button' onclick='useStringObject();' value='Create String Object'/>
+<input type="button" onclick="useDateObject()" value="Create Date Object" />
+<input type='button' onclick='createAnimalObject();' value='Create Animal Object'/>
+<input type="button" onclick="createDogObject()" value="Create Dog Object" />
+<input type="button" onclick="createCatObject()" value="Create Cat Object" />
+
+
 
 
 
